@@ -28,13 +28,16 @@ class App extends Component {
     super();
     this.state = {
       haggle: false,
-      startprice: '88 - 99',
+      startprice: 88,
+      endPrice: 99,
       negotaitePrice: 0
     };
 
     this.onHaggle = this.onHaggle.bind(this);
     this.onCancel = this.onCancel.bind(this);
     this.onNegotaite = this.onNegotaite.bind(this);
+    this.onGoodPrice = this.onGoodPrice.bind(this);
+    this.onChange = this.onChange.bind(this);
   }
 
   onHaggle() {
@@ -49,11 +52,20 @@ class App extends Component {
     });
   }
 
-  onNegotaite() {
-    console.log('negotaite');
+  onGoodPrice() {
+    console.log('good price');
+  }
+
+  onNegotaite() {}
+
+  onChange(e) {
+    this.setState({
+      negotaitePrice: e
+    });
   }
   render() {
-    const { haggle, startprice, negotaitePrice } = this.state;
+    const { haggle, startprice, endPrice, negotaitePrice } = this.state;
+    console.log(startprice);
     return (
       <div className="App">
         <section>
@@ -99,7 +111,14 @@ class App extends Component {
                 </svg>
                 <div class="pricing-price">
                   <span class="pricing-currency">$</span>
-                  88-99
+                  {haggle ? (
+                    [negotaitePrice]
+                  ) : (
+                    <div>
+                      {startprice}-{endPrice}{' '}
+                    </div>
+                  )}
+
                   <span class="pricing-period">/ mo</span>
                 </div>
                 <h3 class="pricing-title">Enterprise</h3>
@@ -113,11 +132,15 @@ class App extends Component {
                 <div>
                   {' '}
                   <Slider
-                    min={88}
-                    max={99}
+                    onChange={this.onChange}
+                    min={startprice}
+                    max={endPrice}
                     defaultValue={88 + 99 / 2}
                     handle={handle}
                   />
+                  <button class="pricing-action" onClick={this.onGoodPrice}>
+                    GIVE ME A GOOD PRICE
+                  </button>
                   <button class="pricing-action" onClick={this.onNegotaite}>
                     NEGOTIATE
                   </button>
