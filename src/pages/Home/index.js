@@ -9,6 +9,23 @@ class Home extends PureComponent {
         <Helmet title="Boilerplate" />
         <h1>Hello World!</h1>
         <p>Lets build something cool.</p>
+
+        <div className="card">
+          <div className="card__title">Card title</div>
+          <div className="card__body">
+            <img className="card__avatar" alt="avatar" />
+          </div>
+          <div className="card__text_box">TEXTY</div>
+          <button className="card__secondary_button" type="button">
+            Answer 1
+          </button>
+          <button className="card__secondary_button" type="button">
+            Answer 2
+          </button>
+          <button className="card__primary_button" type="button">
+            [company-name-verbified]
+          </button>
+        </div>
       </div>
     );
   }
