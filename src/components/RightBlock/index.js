@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Card from '../Card';
 import './styles.scss';
 
 class LeftBlock extends Component {
@@ -6,6 +7,8 @@ class LeftBlock extends Component {
     return (
       <div className="right">
         <p>Waves + cards</p>
+
+        <Card />
       </div>
     );
   }
