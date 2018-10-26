@@ -3,22 +3,6 @@
 @import 'modules/table';
 @import 'modules/typography';
 
-.body {
-  max-width: 1200px;
-  margin: auto;
-  padding: 45px 15px 60px;
-  min-height: calc(100vh - 72px);
-
-  @include max-md {
-    max-width: 960px;
-  }
-
-  @include max-sm {
-    max-width: 720px;
-    padding: 30px 15px;
-  }
-}
-
 .pagination {
   justify-content: flex-end;
   align-items: center;
@@ -72,21 +56,21 @@
     margin-bottom: 0;
 
     svg {
-     margin-left: 15px;
+      margin-left: 15px;
     }
 
     > div {
-     flex: none;
+      flex: none;
     }
 
     &.toast-success {
-     background-color: #0CCE6B;
-     border-color: #0CCE6B;
+      background-color: #0cce6b;
+      border-color: #0cce6b;
     }
 
     &.toast-error {
-     background-color: #E84855;
-     border-color: #E84855;
+      background-color: #e84855;
+      border-color: #e84855;
     }
   }
 

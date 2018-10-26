@@ -2,6 +2,11 @@
 @import '../theme/modules/_typography';
 @import '../theme/modules/_buttons';
 
+@font-face {
+  font-family: 'Work-Sans-Bold';
+  src: url('../fonts/WorkSans-Bold.ttf') format('truetype');
+}
+
 html {
   overflow-y: scroll;
 }
@@ -19,6 +24,8 @@ html {
 .App {
   min-height: 100%;
   position: relative;
+  // background-image: url('../../public/assets/Arcade-bg.jpg');
+  // overflow: hidden;
 }
 
 body {
