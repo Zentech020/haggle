@@ -294,6 +294,7 @@
     "react-router-config": "^1.0.0-beta.4",
     "react-router-dom": "^4.3.1",
     "react-router-redux": "^5.0.0-alpha.9",
+    "react-scroll": "^1.7.10",
     "react-tag-input": "^5.2.2",
     "react-tagsinput": "^3.19.0",
     "react-toastify": "^3.4.2",
@@ -304,7 +305,8 @@
     "semantic-ui-css": "^2.4.0",
     "semantic-ui-react": "^0.82.5",
     "serialize-javascript": "^1.5.0",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "video-react": "^0.13.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",

@@ -1,5 +1,7 @@
 import Header from './Header';
-import RightBlock from './RightBlock';
-import LeftBlock from './LeftBlock';
+import Start from './Start';
+import Sneaker from './Sneaker';
+import Red from './Red';
+import X from './X';
 
-export { Header, LeftBlock, RightBlock };
+export { Header, Start, Sneaker, Red, X };

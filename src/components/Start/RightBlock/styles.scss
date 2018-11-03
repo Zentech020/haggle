@@ -1,0 +1,97 @@
+.right {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .wave__one {
+    position: absolute;
+    left: -192px;
+    top: -157px;
+    transform: rotate(9deg);
+    z-index: -1;
+    animation: swing ease-in-out 10s infinite alternate;
+    animation: myship 10s;
+    -moz-animation: myship 10s; /* Firefox */
+    -webkit-animation: myship 10s; /* Safari and Chrome */
+  }
+
+  .wave__two {
+    position: absolute;
+    left: -180px;
+    top: -57px;
+    transform: rotate(9deg);
+    z-index: -2;
+    animation: swing ease-in-out 10s infinite alternate;
+    animation: myship 10s;
+    -moz-animation: myship 10s; /* Firefox */
+    -webkit-animation: myship 10s; /* Safari and Chrome */
+  }
+
+  .wave__three {
+    position: absolute;
+    left: 0;
+    top: -57px;
+    transform: rotate(9deg);
+    z-index: -3;
+    animation: swing ease-in-out 10s infinite alternate;
+    animation: myship 10s;
+    -moz-animation: myship 10s; /* Firefox */
+    -webkit-animation: myship 10s; /* Safari and Chrome */
+  }
+
+  .wave__four {
+    position: absolute;
+    left: 130px;
+    top: -57px;
+    transform: rotate(9deg);
+    z-index: -4;
+    animation: myship 10s;
+    -moz-animation: myship 10s; /* Firefox */
+    -webkit-animation: myship 10s; /* Safari and Chrome */
+  }
+
+  .wave__five {
+    position: absolute;
+    left: 411px;
+    top: -57px;
+    transform: rotate(9deg);
+    z-index: -5;
+    animation: myship 10s;
+    -moz-animation: myship 10s; /* Firefox */
+    -webkit-animation: myship 10s; /* Safari and Chrome */
+  }
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes myship {
+  from {
+    top: -57px;
+  }
+  to {
+    top: -100px;
+  }
+}
+@-moz-keyframes myship {
+  from {
+    left: -57px;
+  }
+  to {
+    top: -100px;
+  }
+}
+@-webkit-keyframes myship {
+  from {
+    left: -57px;
+  }
+  to {
+    top: -100px;
+  }
+}

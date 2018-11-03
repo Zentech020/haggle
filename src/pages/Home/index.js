@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import Helmet from 'react-helmet';
-import { LeftBlock, RightBlock } from '../../components';
+import { Start, Sneaker, Red, X } from '../../components';
 import './styles.scss';
 
 class Home extends PureComponent {
@@ -8,10 +8,11 @@ class Home extends PureComponent {
     return (
       <div className="Home body">
         <Helmet title="Boilerplate" />
-        <div className="landing">
-          <LeftBlock />
-          <RightBlock />
-        </div>
+
+        <Start />
+        <Sneaker />
+        <Red />
+        <X />
       </div>
     );
   }
