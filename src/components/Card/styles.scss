@@ -1,3 +1,86 @@
 .card {
-  background: blue;
+  background: white;
+  opacity: 1;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 260px;
+  height: 525px;
+  border-radius: 7px;
+  align-self: center;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.12);
+  align-items: center;
+  justify-content: space-between;
+
+  &__header {
+    align-content: flex-start;
+    height: 7%;
+    width: 100%;
+    border-bottom: 1px solid #d8d8d8;
+    p {
+      text-align: center;
+    }
+  }
+
+  &__animation {
+    height: 25%;
+  }
+
+  &__question {
+    border: 1px solid #d8d8d8;
+    width: 80%;
+    height: 15%;
+    p {
+      text-align: center;
+    }
+  }
+
+  &__answers {
+    width: 80%;
+
+    button {
+      display: block;
+      margin: 10px 0;
+      width: 100%;
+      height: 40px;
+      background: white;
+      box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.3);
+      border: none;
+      border-radius: 7px;
+      cursor: pointer;
+      transition: all 0.5s;
+
+      &:hover {
+        background: black;
+        color: white;
+        transform: translate(0, -3px);
+      }
+    }
+  }
+
+  &__submit {
+    width: 80%;
+    align-content: flex-end;
+    padding-bottom: 10px;
+
+    button {
+      display: block;
+      width: 100%;
+      height: 40px;
+      background: black;
+      color: white;
+      box-shadow: 0 5px 6px 0 rgba(0, 0, 0, 0.3);
+      border: none;
+      border-radius: 7px;
+      cursor: pointer;
+      transition: all 0.5s;
+    }
+
+    &:hover {
+      background: white;
+      color: black;
+      transform: translate(0, -3px);
+    }
+  }
 }

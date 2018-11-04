@@ -22,16 +22,16 @@ class LeftBlock extends Component {
         </div>
 
         <div className="left__next">
-          <Link to="red" spy smooth duration={500}>
+          <Link to="red" spy smooth duration={1000}>
             <button className="sneaker__button" type="button">
               next
             </button>
           </Link>
         </div>
 
-        <div className="left__review">
+        <Link className="left__review" to="review" spy smooth duration={1000}>
           <p>Show us what you think of this idea</p>
-        </div>
+        </Link>
       </div>
     );
   }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-scroll';
 import logo from '../../../../public/assets/arqade_logo.png';
 import './styles.scss';
 
@@ -26,9 +27,9 @@ class LeftBlock extends Component {
           </button>
         </div>
 
-        <div className="left__review">
+        <Link className="left__review" to="review" spy smooth duration={1000}>
           <p>Show us what you think of this idea</p>
-        </div>
+        </Link>
       </div>
     );
   }
