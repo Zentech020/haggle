@@ -1,13 +1,80 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import './styles.scss';
 
 class Card extends Component {
-  render() {
-    const { headerTitle, question, answers } = this.props;
+  constructor(props) {
+    super(props);
+    this.state = {
+      started: false,
+      currentQuestionNum: 0,
+      showingResponse: false,
+      reactionIsPositive: null
+    };
+  }
 
-    const answerBlock = (answers || []).map(answer => (
+  guess = guessStr => {
+    const { currentQuestionNum } = this.state;
+    const { correctAnswers } = this.state;
+    if (guessStr === correctAnswers[currentQuestionNum]) {
+      this.respond(true);
+      alert('yo');
+    }
+    this.respond(false);
+  };
+
+  respond = correctBool => {
+    if (correctBool) {
+      this.setState({ showingResponse: true, reactionIsPositive: true });
+    } else {
+      this.setState({ showingResponse: true, reactionIsPositive: false });
+    }
+  };
+
+  renderCardbody = (
+    started,
+    questions,
+    answers,
+    showingResponse,
+    currentQuestionNum
+  ) => {
+    const answerBlock = (answers[currentQuestionNum] || []).map(answer => (
       <button type="button">{answer.title}</button>
     ));
+
+    return (
+      <Fragment>
+        {started ? (
+          <Fragment>
+            <div className="card__question">
+              <p>{questions[currentQuestionNum]}</p>
+            </div>
+            <div className="card__answers">{answerBlock}</div>
+            <div className="card__submit">
+              <button type="button">try</button>
+            </div>
+          </Fragment>
+        ) : (
+          <Fragment>
+            <div className="card__question">
+              <p>Are you ready?</p>
+            </div>
+            <div className="card__submit">
+              <button
+                type="button"
+                onClick={() => this.setState({ started: true })}
+              >
+                I was born ready
+              </button>
+            </div>
+          </Fragment>
+        )}
+      </Fragment>
+    );
+  };
+
+  render() {
+    const { headerTitle, questions, answers } = this.props;
+    const { started, showingResponse, reactionIsPositive } = this.state;
 
     return (
       <div className="card">
@@ -16,14 +83,13 @@ class Card extends Component {
         </div>
         <div className="card__animation">
           <img src="https://i.imgur.com/xofVHtB.png" alt="animation" />
+          {showingResponse && reactionIsPositive ? (
+            <p> response pos </p>
+          ) : (
+            <p> response neg </p>
+          )}
         </div>
-        <div className="card__question">
-          <p>{question}</p>
-        </div>
-        <div className="card__answers">{answerBlock}</div>
-        <div className="card__submit">
-          <button type="button">try</button>
-        </div>
+        {this.renderCardbody(started, questions, answers, showingResponse)}
       </div>
     );
   }
