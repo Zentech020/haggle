@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import Card from '../../Card';
-
-import '../../../../node_modules/video-react/dist/video-react.css'; // import css
+import Card from '../Card';
 import './styles.scss';
 
-class RightBlock extends Component {
+class ColumnCard extends Component {
   render() {
     const answers = [
       [
@@ -71,4 +69,4 @@ class RightBlock extends Component {
   }
 }
 
-export default RightBlock;
+export default ColumnCard;

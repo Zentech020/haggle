@@ -88,9 +88,9 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx}": "eslint",
-    "*.css": "stylelint",
-    "*.{scss,sass}": "stylelint --syntax=scss"
+    "*.{js,jsx}": "",
+    "*.css": "",
+    "*.{scss,sass}": ""
   },
   "babel": {
     "presets": [

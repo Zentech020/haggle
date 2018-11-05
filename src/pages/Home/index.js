@@ -7,7 +7,7 @@ class Home extends PureComponent {
   render() {
     return (
       <div className="Home body">
-        <Helmet title="Boilerplate" />
+        <Helmet title="Arqade - discounts improved" />
 
         <Start />
         <Sneaker />

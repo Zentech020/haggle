@@ -123,7 +123,7 @@ module.exports = {
         // Eslint
         enforce: 'pre',
         test: /\.jsx?$/,
-        exclude: /node_modules/,
+        exclude: /.*node_modules.*/,
         loader: 'eslint',
         options: { failOnError: eslint }
       },

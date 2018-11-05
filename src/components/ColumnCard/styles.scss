@@ -1,4 +1,4 @@
-.left {
+.content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -24,7 +24,7 @@
     .sneaker__button {
       width: 200px;
       height: 55px;
-      background-image: url('../../../images/yeezy_pattern.jpg');
+      background-image: url('../../images/yeezy_pattern.jpg');
       background-size: cover;
       border: none;
       border-radius: 25px;

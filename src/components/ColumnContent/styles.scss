@@ -1,4 +1,4 @@
-.left {
+.content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -21,10 +21,28 @@
     padding: 0 30px;
     height: 10%;
 
+    .sneaker__button {
+      width: 200px;
+      height: 55px;
+      background-image: url('../../images/yeezy_pattern.jpg');
+      background-size: cover;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 35px;
+      color: white;
+      transition: all 2s linear; /* vendorless fallback */
+
+      &:hover {
+        background-position-x: -50px;
+        transition: all 2s;
+      }
+    }
+
     .start__button {
       width: 200px;
       height: 55px;
-      background-image: url('../../../images/waves.jpg');
+      background-image: url('../../images/waves.jpg');
       background-size: 250px 55px;
       background-position-x: 0;
       border: none;
@@ -45,7 +63,6 @@
     background: black;
     margin-top: auto;
     height: 7%;
-    cursor: pointer;
 
     p {
       color: white;

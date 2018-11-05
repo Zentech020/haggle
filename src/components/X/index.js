@@ -6,8 +6,8 @@ class X extends Component {
   render() {
     return (
       <div className="landing">
-        <Leftblock />
         <Rightblock />
+        <Leftblock />
       </div>
     );
   }
