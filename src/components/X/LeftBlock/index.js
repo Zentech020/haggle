@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-scroll';
 
-import logo from '../../../../public/assets/arqade_logo.png';
+import logo from '../../../images/arqade_logo.png';
 import './styles.scss';
 
 class LeftBlock extends Component {

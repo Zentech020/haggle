@@ -13,8 +13,7 @@ class Card extends Component {
   }
 
   guess = guessStr => {
-    const { currentQuestionNum } = this.state;
-    const { correctAnswers } = this.state;
+    const { currentQuestionNum, correctAnswers } = this.state;
     if (guessStr === correctAnswers[currentQuestionNum]) {
       this.respond(true);
       alert('yo');
@@ -41,33 +40,32 @@ class Card extends Component {
       <button type="button">{answer.title}</button>
     ));
 
+    if (started) {
+      return (
+        <Fragment>
+          <div className="card__question">
+            <p>Are you ready?</p>
+          </div>
+          <div className="card__submit">
+            <button
+              type="button"
+              onClick={() => this.setState({ started: true })}
+            >
+              I was born ready
+            </button>
+          </div>
+        </Fragment>
+      );
+    }
     return (
       <Fragment>
-        {started ? (
-          <Fragment>
-            <div className="card__question">
-              <p>{questions[currentQuestionNum]}</p>
-            </div>
-            <div className="card__answers">{answerBlock}</div>
-            <div className="card__submit">
-              <button type="button">try</button>
-            </div>
-          </Fragment>
-        ) : (
-          <Fragment>
-            <div className="card__question">
-              <p>Are you ready?</p>
-            </div>
-            <div className="card__submit">
-              <button
-                type="button"
-                onClick={() => this.setState({ started: true })}
-              >
-                I was born ready
-              </button>
-            </div>
-          </Fragment>
-        )}
+        <div className="card__question">
+          <p>{questions[currentQuestionNum]}</p>
+        </div>
+        <div className="card__answers">{answerBlock}</div>
+        <div className="card__submit">
+          <button type="button">try</button>
+        </div>
       </Fragment>
     );
   };
