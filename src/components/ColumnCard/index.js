@@ -49,7 +49,7 @@ class ColumnCard extends Component {
       ]
     ];
 
-    const rightAnswers = [0, 1, 2];
+    const correctAnswers = [0, 1, 2];
 
     const questions = ['question 1', 'question 2', 'question 3'];
 
@@ -58,7 +58,7 @@ class ColumnCard extends Component {
         <Card
           headerTitle="Yeezy boost 350"
           answers={answers}
-          rightAnswers={rightAnswers}
+          correctAnswers={correctAnswers}
           questions={questions}
         />
         <video name="yeezy" className="right__sneaker" autoPlay muted loop>

@@ -8,26 +8,26 @@ class Card extends Component {
       started: false,
       currentQuestionNum: 0,
       showingResponse: false,
-      reactionIsPositive: null
+      reactionIsPositive: null,
+      amountCorrectAnswers: 0
     };
   }
 
-  guess = guessStr => {
-    const { currentQuestionNum, correctAnswers } = this.state;
-    if (guessStr === correctAnswers[currentQuestionNum]) {
-      this.respond(true);
+  guess = guessId => {
+    const { currentQuestionNum, amountCorrectAnswers } = this.state;
+    const { correctAnswers } = this.props;
+    if (guessId === correctAnswers[currentQuestionNum]) {
       alert('yo');
+      this.setState({
+        amountCorrectAnswers: amountCorrectAnswers + 1
+      });
     }
-    this.respond(false);
+    this.setState({
+      currentQuestionNum: currentQuestionNum + 1
+    });
   };
 
-  respond = correctBool => {
-    if (correctBool) {
-      this.setState({ showingResponse: true, reactionIsPositive: true });
-    } else {
-      this.setState({ showingResponse: true, reactionIsPositive: false });
-    }
-  };
+  renderResponse = () => {};
 
   renderCardbody = (
     started,
@@ -36,11 +36,8 @@ class Card extends Component {
     showingResponse,
     currentQuestionNum
   ) => {
-    const answerBlock = (answers[currentQuestionNum] || []).map(answer => (
-      <button type="button">{answer.title}</button>
-    ));
-
-    if (started) {
+    const { amountCorrectAnswers } = this.state;
+    if (!started) {
       return (
         <Fragment>
           <div className="card__question">
@@ -57,14 +54,32 @@ class Card extends Component {
         </Fragment>
       );
     }
+
+    if (currentQuestionNum < questions.length) {
+      const answerBlock = answers[currentQuestionNum].map(answer => (
+        <button type="button" onClick={() => this.guess(answer.id)}>
+          {answer.title}
+        </button>
+      ));
+
+      return (
+        <Fragment>
+          <div className="card__question">
+            <p>{questions[currentQuestionNum]}</p>
+          </div>
+          <div className="card__answers">{answerBlock}</div>
+          <div className="card__submit">
+            <button type="button">try</button>
+          </div>
+        </Fragment>
+      );
+    }
     return (
       <Fragment>
         <div className="card__question">
-          <p>{questions[currentQuestionNum]}</p>
-        </div>
-        <div className="card__answers">{answerBlock}</div>
-        <div className="card__submit">
-          <button type="button">try</button>
+          <p>
+            Great job! You earned a {(amountCorrectAnswers + 1) * 5}% discount!
+          </p>
         </div>
       </Fragment>
     );
@@ -72,7 +87,12 @@ class Card extends Component {
 
   render() {
     const { headerTitle, questions, answers } = this.props;
-    const { started, showingResponse, reactionIsPositive } = this.state;
+    const {
+      started,
+      showingResponse,
+      reactionIsPositive,
+      currentQuestionNum
+    } = this.state;
 
     return (
       <div className="card">
@@ -81,13 +101,15 @@ class Card extends Component {
         </div>
         <div className="card__animation">
           <img src="https://i.imgur.com/xofVHtB.png" alt="animation" />
-          {showingResponse && reactionIsPositive ? (
-            <p> response pos </p>
-          ) : (
-            <p> response neg </p>
-          )}
+          {this.renderResponse(showingResponse, reactionIsPositive)}
         </div>
-        {this.renderCardbody(started, questions, answers, showingResponse)}
+        {this.renderCardbody(
+          started,
+          questions,
+          answers,
+          showingResponse,
+          currentQuestionNum
+        )}
       </div>
     );
   }

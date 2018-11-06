@@ -1,11 +1,7 @@
 .colours {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: white;
+  position: relative;
   width: 100%;
   height: 100%;
-  font-family: Work-Sans-Bold, sans-serif;
 
   .wave__one {
     position: absolute;
