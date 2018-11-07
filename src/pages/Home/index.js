@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import Helmet from 'react-helmet';
-import { Start, ProductCard } from '../../components';
+import { Link } from 'react-scroll';
+import { Start, ProductCard, Popup } from '../../components';
 import './styles.scss';
 
 class Home extends PureComponent {
@@ -18,6 +19,16 @@ class Home extends PureComponent {
           <ProductCard />
           <ProductCard />
         </div>
+        <Link
+          className="content__review"
+          to="review"
+          spy
+          smooth
+          duration={1000}
+        >
+          <p>Show us what you think of this idea</p>
+        </Link>
+        <Popup />
       </div>
     );
   }
