@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import Helmet from 'react-helmet';
-import { Start, Sneaker, Red, X, Review } from '../../components';
+import { Start, Sneaker, Red, X, Review, ProductCard } from '../../components';
 import './styles.scss';
 
 class Home extends PureComponent {
@@ -14,6 +14,14 @@ class Home extends PureComponent {
         <Red />
         <X />
         <Review />
+        <div className="ProductContainer">
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+        </div>
       </div>
     );
   }
