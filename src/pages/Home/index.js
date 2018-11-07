@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import Helmet from 'react-helmet';
-import { Start, Sneaker, Red, X, Review, ProductCard } from '../../components';
+import { Start, ProductCard } from '../../components';
 import './styles.scss';
 
 class Home extends PureComponent {
@@ -8,13 +8,9 @@ class Home extends PureComponent {
     return (
       <div className="Home body">
         <Helmet title="Arqade - discounts improved" />
-
         <Start />
-        <Sneaker />
-        <Red />
-        <X />
-        <Review />
         <div className="ProductContainer">
+          <ProductCard />
           <ProductCard />
           <ProductCard />
           <ProductCard />

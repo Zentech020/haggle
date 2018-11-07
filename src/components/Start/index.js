@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-scroll';
 import ColumnContent from '../ColumnContent';
-import ColumnColours from '../ColumnColours';
 
 class Start extends Component {
   render() {
@@ -24,7 +23,6 @@ class Start extends Component {
             </button>
           </Link>
         />
-        <ColumnColours />
       </div>
     );
   }

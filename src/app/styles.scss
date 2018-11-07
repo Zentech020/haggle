@@ -29,15 +29,14 @@ html {
 .App {
   min-height: 100%;
   position: relative;
+  max-width: 100%;
+  background: linear-gradient(to bottom, #f7f7f7 0%,#e3f1f7 35%,#feffff 100%);
   // background-image: url('../../public/assets/Arcade-bg.jpg');
   // overflow: hidden;
 }
 
-body {
-  background-color: white;
-}
-
 .ProductContainer {
   display: flex;
-  width: 3000px;
+  width: 100%;
+  overflow: visible;
 }
