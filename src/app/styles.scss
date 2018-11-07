@@ -12,6 +12,21 @@
   src: url('../fonts/earthsmightiest3d.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Cera-Bold';
+  src: url('../fonts/Cera-Pro-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cera-Medium';
+  src: url('../fonts/Cera-Pro-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cera-Regular';
+  src: url('../fonts/Cera-Pro-Regular.ttf') format('truetype');
+}
+
 html {
   overflow-y: scroll;
 }
@@ -39,5 +54,5 @@ body {
 
 .ProductContainer {
   display: flex;
-  width: 3000px;
+  overflow: hidden;
 }
