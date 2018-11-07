@@ -3,7 +3,7 @@
   margin: 20px;
   animation: moveSlideshow 15s linear infinite;
   width: 300px;
-  box-shadow: 0 16px 16px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 10px 32px 32px 0 rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,8 +45,15 @@
       background: black;
       border: none;
       color: white;
-      padding: 10px 20px;
-      font-family: Cera-Medium, sans-serif;
+      padding: 15px 25px;
+      transition: color 0.25s, background-color 0.25s;
+      border-radius: 3px;
+
+      &:hover {
+        color: black;
+        cursor: pointer;
+        background-color: white;
+      }
     }
   }
 

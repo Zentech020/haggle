@@ -82,7 +82,6 @@ class Home extends PureComponent {
     return (
       <div className="Home body">
         <Helmet title="Arqade - discounts improved" />
-
         <Start />
         <Sneaker />
         <Red />

@@ -5,5 +5,6 @@ import Red from './Red';
 import X from './X';
 import Review from './Review';
 import ProductCard from './ProductCard';
+import Popup from './Popup';
 
-export { Header, Start, Sneaker, Red, X, Review, ProductCard };
+export { Header, Start, Sneaker, Red, X, Review, ProductCard, Popup };
