@@ -5,7 +5,6 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background: white;
   position: relative;
 
   &__logo {
@@ -70,12 +69,12 @@
     margin-top: 50px;
 
     a {
-      padding: 10px 60px;
+      padding: 20px 60px;
       margin: 0 40px;
       font-family: Cera-Medium, sans-serif;
       font-size: 18px;
       cursor: pointer;
-      box-shadow: 10px 22px 22px 0 rgba(0, 0, 0, 0.15);
+      box-shadow: 0 3px 19px 0 rgba(0, 0, 0, 0.5);
       transition: background 0.3s, border 0.3s, color 0.3s, box-shadow 0.3s,
         transform 0.3s, -webkit-box-shadow 0.3s, -webkit-transform 0.3s;
       border-radius: 4px;
@@ -121,6 +120,5 @@
   width: 100%;
   -webkit-animation: slide-top 1s cubic-bezier(0, 0, 0, 0) both;
   animation: slide-top 1s cubic-bezier(0, 0, 0, 0) both;
-  background: white;
   margin-top: 40px;
 }

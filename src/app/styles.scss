@@ -37,7 +37,8 @@ html {
   width: 100%;
   overflow: hidden;
   overflow-y: auto;
-  background: white;
+  background-image: url('../images/arqade_bg.jpg');
+  background-size: cover;
 }
 
 #react-view {
