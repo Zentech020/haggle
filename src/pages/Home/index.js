@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import Helmet from 'react-helmet';
-import { Start, Sneaker, Red, X, Review, ProductCard } from '../../components';
+import { Link } from 'react-scroll';
+import { ProductCard } from '../../components';
 import hm from '../../images/hm_logo.png';
 import boots from '../../images/Boots.png';
 import seinheiserLogo from '../../images/seinheiser_logo.png';
@@ -82,12 +83,47 @@ class Home extends PureComponent {
     return (
       <div className="Home body">
         <Helmet title="Arqade - discounts improved" />
-        <Start />
+        {/* <Start />
         <Sneaker />
         <Red />
         <X />
-        <Review />
-        <div className="ProductContainer">{cards}</div>
+        <Review /> */}
+        <div className="landingpage">
+          <div className="landingpage__logo">
+            <p>Arqade</p>
+          </div>
+          <div className="landingpage__content">
+            <h4>
+              Hey there you
+              <span role="img" aria-label="hi">
+                👋
+              </span>
+            </h4>
+            <p>
+              Do you like discounts? Of course you do, discounts are awesome.
+              But scraping together promo codes or waiting for sale? Decidedly
+              not awesome. We at Arqade think receiving discounts should be as
+              fun as the discounts themselves.
+            </p>
+          </div>
+          <div className="landingpage__buttons">
+            <Link className="cta1" to="product" spy smooth duration={1000}>
+              Get discount
+            </Link>
+            <a
+              href="https://zenobruinsma.typeform.com/to/YnIZnL"
+              data-mode="popup"
+              className="cta2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Write a review
+            </a>
+          </div>
+          <div name="product" className="ProductContainer">
+            {cards}
+          </div>
+        </div>
       </div>
     );
   }
