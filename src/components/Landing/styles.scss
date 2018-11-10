@@ -45,8 +45,15 @@
       }
     }
 
-    span {
-      margin-left: 20px;
+    img {
+      width: 60px;
+      height: 60px;
+      margin-left: 30px;
+
+      &:hover {
+        -webkit-animation: vibrate-1 0.3s linear infinite both;
+        animation: vibrate-1 0.3s linear infinite both;
+      }
     }
 
     h4 {
@@ -100,7 +107,7 @@
     }
 
     .cta2 {
-      background: white;
+      background: transparent;
       border: 2px solid black;
       color: black !important;
       transition: 0.5s all;

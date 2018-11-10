@@ -9,6 +9,7 @@ import PlaystationLogo from '../../images/playstation_logo.png';
 import controller from '../../images/controller.png';
 import vinylLogo from '../../images/vinyl_logo.png';
 import bobDylan from '../../images/bobdylan_lp.png';
+import waveHand from '../../images/wave_hand.png';
 
 import './styles.scss';
 
@@ -27,7 +28,8 @@ const CARDS = [
     background: '#4ad4fd',
     color: COLORS.white,
     colorButton: COLORS.white,
-    backgroundButton: COLORS.black
+    backgroundButton: COLORS.black,
+    id: 1
   },
   {
     logo: vinylLogo,
@@ -38,7 +40,8 @@ const CARDS = [
     background: '#DE4329',
     color: COLORS.white,
     colorButton: COLORS.white,
-    backgroundButton: COLORS.black
+    backgroundButton: COLORS.black,
+    id: 2
   },
 
   {
@@ -50,7 +53,8 @@ const CARDS = [
     background: COLORS.white,
     color: COLORS.black,
     colorButton: COLORS.white,
-    backgroundButton: COLORS.black
+    backgroundButton: COLORS.black,
+    id: 3
   },
 
   {
@@ -62,7 +66,8 @@ const CARDS = [
     background: COLORS.black,
     color: COLORS.white,
     colorButton: COLORS.black,
-    backgroundButton: COLORS.white
+    backgroundButton: COLORS.white,
+    id: 4
   }
 ];
 
@@ -70,6 +75,7 @@ class Landing extends Component {
   render() {
     const cards = CARDS.map(card => (
       <ProductCard
+        key={card.id}
         subtitle={card.subtitle}
         Title={card.title}
         logo={card.logo}
@@ -89,9 +95,7 @@ class Landing extends Component {
           <div className="landingpage__content">
             <h4>
               Hey there you
-              <span role="img" aria-label="hi">
-                👋
-              </span>
+              <img src={waveHand} alt="wave" />
             </h4>
             <p>
               Do you like discounts? Of course you do, discounts are awesome.
@@ -101,7 +105,13 @@ class Landing extends Component {
             </p>
           </div>
           <div className="landingpage__buttons">
-            <Link className="cta1" to="product" spy smooth duration={1000}>
+            <Link
+              className="cta1"
+              to="ProductContainer"
+              spy
+              smooth
+              duration={1000}
+            >
               Get discount
             </Link>
             <a
@@ -115,7 +125,7 @@ class Landing extends Component {
             </a>
           </div>
         </div>
-        <div name="product" className="ProductContainer">
+        <div name="ProductContainer" className="ProductContainer">
           {cards}
         </div>
       </div>
